@@ -1,0 +1,11 @@
+<app-post [post]="post" [user]="user" [viewDetail]="false"></app-post>
+<h3 class="ml-3">Comments :</h3>
+<h3 *ngIf="!comments.length" class="ml-5">No Comments</h3>
+<app-comment *ngFor="let comment of comments;" [comment]="comment"></app-comment>
+
+<div class="flex justify-center">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" routerLink="/">
+    Post List
+  </button>
+
+</div>

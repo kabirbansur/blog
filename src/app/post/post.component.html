@@ -1,0 +1,23 @@
+<div class="max-w-sm w-full lg:max-w-full lg:flex justify-center my-5 px-2">
+  <div
+    class="border border-l border-gray-400 bg-white rounded-b p-4 flex flex-col justify-between leading-normal shadow-xl">
+    <div class="mb-8">
+      <div class="text-gray-900 font-bold text-xl mb-2">{{ post.title}}</div>
+      <p class="text-gray-700 text-base">{{ post.body }}</p>
+    </div>
+    <div class="flex items-center">
+      <div class="relative">
+        <img class="w-10 h-10 rounded-full mr-4" src="assets/{{user.gender}}.webp" alt="User Avatar">
+        <span
+          class="top-0 left-7 absolute  w-3.5 h-3.5 {{user.status=='active' ? 'bg-green-400': 'bg-gray-800'}} border-2 border-white dark:border-gray-800 rounded-full"></span>
+      </div>
+      <div class="text-sm">
+        <p class="text-gray-900 leading-none">{{ user.name }}</p>
+        <p class="text-gray-600"><a href="mailto:{{ user.email}}">{{ user.email}}</a></p>
+      </div>
+
+    </div>
+    <button *ngIf="viewDetail" class="flex justify-end text-blue-700 font-bold" routerLink="/post/{{post.id}}/detail"
+       title="View Detail" (click)="showDetail()">View Detail</button>
+  </div>
+</div>
